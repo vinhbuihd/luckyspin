@@ -105,7 +105,7 @@ export default function Home() {
       />
 
       <div className="text-white mt-4 flex gap-1">
-        Reward: {rewardId && <div> {rewardId + 1}$</div>}
+        Reward: {rewardId !== undefined && <div> {rewardId + 1}$</div>}
       </div>
     </div>
   );
