@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .clipPath {
+    clip-path: polygon(100% 0, 0 0, 50% 100%);
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: "sfpro";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/src/assets//font/sf-pro-display-font/SF-Pro-Display-Regular.woff)
+      format("woff");
+  }
+
+  @font-face {
+    font-family: "sfpro";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(/src/assets//font/sf-pro-display-font/SF-Pro-Display-Medium.woff)
+      format("woff");
+  }
+
+  @font-face {
+    font-family: "sfpro";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(/src/assets//font/sf-pro-display-font/SF-Pro-Display-Bold.woff)
+      format("woff");
+  }
+
+  @font-face {
+    font-family: "sfpro";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/src/assets//font/sf-pro-display-font/SF-Pro-Display-Heavy.woff)
+      format("woff");
+  }
+
+  @font-face {
+    font-family: "sfpro";
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url(/src/assets//font/sf-pro-display-font/SF-Pro-Display-Black.woff)
+      format("woff");
+  }
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
