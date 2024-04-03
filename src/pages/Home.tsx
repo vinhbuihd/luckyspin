@@ -34,6 +34,8 @@ export default function Home() {
 
   const [isSpinning, setIsSpinning] = useState(false);
 
+  console.log("isSpinning", isSpinning);
+
   const onStart = async () => {
     if (spinRef.current) {
       setIsSpinning(true);
@@ -55,14 +57,11 @@ export default function Home() {
       };
 
       Promise.all([sleep(6000), fakeCallApi(), runningStep1AndStep2()]).then(
-        (res) => {
+        async (res) => {
           console.log("xong lan 2");
-
           const rewardId = res[1];
-
           console.log("rewardId", rewardId);
 
-          // setIsSpinning(true);
           const rewardDeg = rewardId * deg; // 0 60 120 180 240 300 360
 
           if (spinRef.current) {
@@ -80,6 +79,7 @@ export default function Home() {
 
             spinTurnRef.current += totalRevolutions;
             console.log("xong");
+            await sleep(4000);
 
             setIsSpinning(false);
           }
