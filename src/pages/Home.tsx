@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Header from "../components/Header";
 import Spin from "../components/Spin";
 
@@ -32,8 +32,11 @@ export default function Home() {
     return getRandomNumber(-(deg / 2 - 5), deg / 2 - 5);
   };
 
+  const [isSpinning, setIsSpinning] = useState(false);
+
   const onStart = async () => {
     if (spinRef.current) {
+      setIsSpinning(true);
       const runningStep1AndStep2 = async () => {
         console.log("spinTurnRef.current", spinTurnRef.current);
         if (spinRef.current) {
@@ -77,6 +80,8 @@ export default function Home() {
 
             spinTurnRef.current += totalRevolutions;
             console.log("xong");
+
+            setIsSpinning(false);
           }
         }
       );
@@ -89,7 +94,7 @@ export default function Home() {
 
       <Spin
         size={size}
-        disabled={false}
+        disabled={isSpinning}
         spinItems={spinItems}
         onStart={onStart}
         spinRef={spinRef}
